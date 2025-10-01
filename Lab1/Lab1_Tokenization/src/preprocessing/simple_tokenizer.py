@@ -1,7 +1,7 @@
 from typing import List
 import re
 
-from Lab1.src.core.interfaces import Tokenizer
+from src.core.interfaces import Tokenizer
 
 class SimpleTokenizer(Tokenizer):
     def tokenize(self, text: str) -> List[str]:

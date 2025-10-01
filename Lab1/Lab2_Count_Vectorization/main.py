@@ -1,5 +1,5 @@
-from Lab1.src.core.interfaces import Vectorizer
-from Lab2.src.representations.count_vectorizer import CountVectorizer
+from ..Lab1_Tokenization.src.core.interfaces import Vectorizer
+from Lab2_Count_Vectorization.src.representations.count_vectorizer import CountVectorizer
 
 def main():
     vectorizer = CountVectorizer()
