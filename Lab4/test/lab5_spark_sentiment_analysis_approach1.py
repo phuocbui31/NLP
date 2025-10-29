@@ -44,19 +44,16 @@ df = tokenizer.transform(df)
 df = stopwordsRemover.transform(df)
 
 # 6. Vocabulary Reduction
-from pyspark.sql.types import ArrayType, StringType
-from pyspark.sql import functions as F
 word_df = df.select(F.explode(col("filtered_words")).alias("word"))
 word_freq = word_df.groupBy("word").count()
-freq_words = word_freq.filter((col("count") >= MIN_FREQ) & (col("count") <= MAX_FREQ)).select("word")
-freq_words_list = [row["word"] for row in freq_words.collect()]
+freq_words_df = word_freq.filter((col("count") >= MIN_FREQ) & (col("count") <= MAX_FREQ)).select("word")
 
-def filter_tokens(tokens):
-	return [t for t in tokens if t in freq_words_list]
+freq_words_list = [row["word"] for row in freq_words_df.collect()]
 
-from pyspark.sql.functions import udf
-filter_tokens_udf = udf(filter_tokens, ArrayType(StringType()))
-df = df.withColumn("filtered_words_final", filter_tokens_udf(col("filtered_words")))
+freq_words_col = F.array([F.lit(w) for w in freq_words_list])
+
+df = df.withColumn("filtered_words_final", 
+                   F.array_intersect(col("filtered_words"), freq_words_col))
 print(f"After reduce vocabulary: {df.count()}")
 
 # 7. Feature Extraction
@@ -68,7 +65,7 @@ idf = IDF(inputCol="raw_features", outputCol="tfidf_features")
 train_df, test_df = df.randomSplit([0.8, 0.2], seed=42)
 
 # 9. Build pipeline
-lr = LogisticRegression(maxIter=10, regParam=0.001, featuresCol="features", labelCol="label")
+lr = LogisticRegression(maxIter=10, regParam=0.001, featuresCol="tfidf_features", labelCol="label")
 pipeline = Pipeline(stages=[hashingTF, idf, lr])
 
 # 10. Training and evaluation
