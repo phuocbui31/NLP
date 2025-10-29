@@ -1,4 +1,3 @@
-import sys
 from pathlib import Path
 import numpy as np
 from datetime import datetime
@@ -6,9 +5,8 @@ from loguru import logger
 
 # Add root directory to Python path
 root_dir = Path(__file__).parents[1]
-sys.path.insert(0, str(root_dir))
 
-from src.representations.word_embedder import WordEmbedder
+from Lab3.src.representations.word_embedder import WordEmbedder
 
 def main():
     """Main test function."""

@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from src.preprocessing.simple_tokenizer import SimpleTokenizer
-from src.preprocessing.regex_tokenizer import RegexTokenizer
+from Lab1.Lab1_Tokenization.src.preprocessing.simple_tokenizer import SimpleTokenizer
+from Lab1.Lab1_Tokenization.src.preprocessing.regex_tokenizer import RegexTokenizer
 
 def main():
     datatset_path = "data/UD_English-EWT/en_ewt-ud-train.txt"

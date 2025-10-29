@@ -1,0 +1,13 @@
+[project]
+name = "nlp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.4",
+    "pyspark>=4.0.1",
+    "scikit-learn>=1.7.2",
+    "spacy>=3.8.7",
+    "tokenizers>=0.22.1",
+]

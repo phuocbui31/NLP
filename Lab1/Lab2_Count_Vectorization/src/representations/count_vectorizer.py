@@ -1,5 +1,5 @@
-from Lab1_Tokenization.src.core.interfaces import Tokenizer
-from Lab2_Count_Vectorization.src.core.interfaces import Vectorizer
+from Lab1.Lab1_Tokenization.src.core.interfaces import Tokenizer
+from Lab1.Lab2_Count_Vectorization.src.core.interfaces import Vectorizer
 from typing import List
 
 class CountVectorizer(Vectorizer):
