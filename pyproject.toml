@@ -10,4 +10,5 @@ dependencies = [
     "scikit-learn>=1.7.2",
     "spacy>=3.8.7",
     "tokenizers>=0.22.1",
+    "torch>=2.9.0",
 ]
