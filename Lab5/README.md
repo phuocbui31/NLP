@@ -2,9 +2,24 @@
 
 Lab5 hướng dẫn thực hành, đi qua các khái niệm cơ bản nhất của PyTorch, từ cấu trúc dữ liệu cốt lõi cho đến cách xây dựng một mô hình mạng nơ-ron đơn giản.
 
+## Cài đặt thư viện
+
+*   Đảm bảo cài đặt thư viện `uv`. Nếu chưa cài đặt, có thể sử dụng lệnh: ```curl -LsSf https://astral.sh/uv/install.sh | sh```
+
+*   Khởi tạo môi trường để chạy code:
+    ```bash
+    uv venv .venv
+    source .venv/bin/activate
+    ```
+
+*   Cài đặt thư viện cần thiết (bao gồm cả thư viện của các bài thực hành trước):
+    ```bash
+    uv sync
+    ```
+
 ## Nội dung
 
-Bài thực hành gồm 3 phần chính
+**Bài thực hành gồm 3 phần chính**
 
 ### Phần 1: Khám phá Tensor
 
