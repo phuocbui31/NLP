@@ -2,7 +2,7 @@
 
 ## 1. Giới thiệu
 - Mục tiêu: So sánh các phương pháp phân loại văn bản từ cơ bản đến nâng cao
-- Dataset: Intent Classification (train/val/test splits)
+- Dataset: Intent Classification (train/val/test)
 - Số lượng classes: 150
 - Tổng số mẫu training: 13,084
 
@@ -69,24 +69,24 @@
 
 | Pipeline | Accuracy | F1-score (Macro) | Test Loss |
 |----------|----------|------------------|-----------|
-| TF-IDF + LR | 0.8734 | 0.8521 | N/A |
-| Word2Vec (Avg) + Dense | 0.8456 | 0.8234 | 0.4521 |
-| Embedding (Pre-trained) + LSTM | 0.7823 | 0.7654 | 0.5890 |
-| Embedding (Scratch) + LSTM | 0.7234 | 0.6987 | 0.6234 |
+| TF-IDF + LR | 0.833643 | 0.830032 | N/A |
+| Word2Vec (Avg) + Dense | 0.602230 | 0.578762 | 1.320 |
+| Embedding (Pre-trained) + LSTM | 0.089219 | 0.034037 | 3.365 |
+| Embedding (Scratch) + LSTM | 0.017658 | 0.000542 | 4.124 |
 
 ### 3.2 Nhận xét Định Lượng
-- Mô hình TF-IDF + LR đạt Accuracy cao nhất: 0.8734 (87.34%)
-  - Điều này cho thấy task này có thể được giải quyết tốt chỉ với các từ khóa
+- Mô hình TF-IDF + LR đạt Accuracy cao nhất: 0.833643
+  - Điều này cho thấy task này được giải quyết tốt chỉ với các từ khóa
   - Đơn giản nhưng hiệu quả cao
   
-- Mô hình Word2Vec + Dense có hiệu suất thứ hai: 0.8456 (84.56%)
+- Mô hình Word2Vec + Dense có hiệu suất thứ hai: 0.602230
   - Cải thiện so với TF-IDF nhờ semantic embeddings
   - Loss thấp cho thấy mô hình hội tụ tốt
   
 - Cả hai mô hình LSTM đều có hiệu suất thấp hơn kỳ vọng:
-  - Pre-trained: 0.7823 (78.23%)
-  - Scratch: 0.7234 (72.34%)
-  - Nguyên nhân: Dữ liệu training có thể không đủ lớn để LSTM học được patterns dài hạn, hoặc LSTM cần hyperparameter tuning tốt hơn
+  - Pre-trained: 0.089219
+  - Scratch: 0.017658
+  - Nguyên nhân: Dữ liệu training không đủ lớn để LSTM học được patterns dài hạn
 
 ## 4. Phân Tích Định Tính
 
@@ -160,7 +160,7 @@ Task này quá đơn giản cho LSTM - chỉ cần nhận diện từ khóa. Mô
 Đối với task này (Intent Classification):
 
 1. TF-IDF + Logistic Regression là tốt nhất
-   - Accuracy cao nhất (87.34%)
+   - Accuracy cao nhất (83.36%)
    - Huấn luyện nhanh và dễ
    - Dễ deploy và maintain
    - Không cần GPU
@@ -172,12 +172,12 @@ Task này quá đơn giản cho LSTM - chỉ cần nhận diện từ khóa. Mô
    - Averaging vectors mất thông tin thứ tự
 
 3. LSTM Pre-trained không như kỳ vọng
-   - Accuracy 78.23% - thấp hơn TF-IDF
+   - Accuracy 8.92% - thấp hơn TF-IDF
    - Embedding cố định không flexible
    - Hyperparameters cần tuning (dropout quá cao)
 
 4. LSTM Scratch là tệ nhất
-   - Accuracy 72.34% - kém nhất
+   - Accuracy 1.77% - kém nhất
    - Underfitted - dữ liệu training không đủ
    - Model collapse về một class (qa_definition)
    - Có tiềm năng nếu có dữ liệu lớn hơn
