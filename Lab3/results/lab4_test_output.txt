@@ -1,5 +1,5 @@
 Lab 4: WordEmbedder Test
-Execution time: 2025-10-16 22:37:42
+Execution time: 2025-11-02 15:38:56
 ==================================================
 
 Model loaded successfully
@@ -27,5 +27,5 @@ king-man similarity: 0.5119
 4. Document embedding:
 Input sentence: 'The queen rules the country.'
 Document vector shape: (100,)
-First 5 values: [-0.07769361 -0.269322    0.74817401 -0.12821101  0.0242568 ]
+First 5 values: [-0.1380128  -0.178466    0.69524601 -0.17787301 -0.0691316 ]
 Is zero vector: False

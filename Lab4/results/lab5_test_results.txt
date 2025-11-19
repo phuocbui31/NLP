@@ -1,4 +1,4 @@
-Training time: 0.007 seconds
+Training time: 0.001 seconds
 Prediction time: 0.000 seconds
 Evaluation metrics:
 accuracy: 0.000
