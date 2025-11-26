@@ -7,6 +7,9 @@
 
 ---
 
+## Link to file code:
+[https://github.com/phuocbui31/NLP/blob/main/Lab6/Lab6_Intro_to_Transformers.pdf](https://github.com/phuocbui31/NLP/blob/main/Lab6/Lab6_Intro_to_Transformers.pdf)
+
 ## 2. Bài 1 — Masked Language Modeling
 
 ### Câu hỏi & Trả lời
