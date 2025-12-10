@@ -9,7 +9,7 @@
 ---
 
 ## Link to file code:
-[https://github.com/phuocbui31/NLP/blob/main/Lab7/Lab7_Dependency_Parsing.ipynb](https://github.com/phuocbui31/NLP/Lab7/Lab7_Dependency_Parsing.ipynb)
+[https://github.com/phuocbui31/NLP/Lab7/Lab7_Dependency_Parsing.ipynb](https://github.com/phuocbui31/NLP/Lab7/Lab7_Dependency_Parsing.ipynb)
 
 ## 2. Phần 2: Phân tích câu và Trực quan hóa
 
@@ -139,4 +139,4 @@ Với câu "The quick brown fox jumps over the lazy dog." và token "dog":
 - spaCy Dependency Parser: https://spacy.io/usage/linguistic-features#dependency-parse
 - Universal Dependencies: https://universaldependencies.org/
 - Honnibal, M. & Montani, I., *spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing*, 2017.
-- Tài liệu trên lớp
+- Tài liệu giảng dạy trên lớp
