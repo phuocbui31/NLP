@@ -9,7 +9,7 @@
 ---
 
 ## Link to file code:
-[https://github.com/phuocbui31/NLP/Lab7/Lab7_Dependency_Parsing.ipynb](https://github.com/phuocbui31/NLP/Lab7/Lab7_Dependency_Parsing.ipynb)
+[https://github.com/phuocbui31/NLP/blob/main/Lab7/Lab7_Dependency_Parsing.pdf](https://github.com/phuocbui31/NLP/blob/main/Lab7/Lab7_Dependency_Parsing.pdf)
 
 ## 2. Phần 2: Phân tích câu và Trực quan hóa
 
